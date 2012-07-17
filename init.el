@@ -36,6 +36,10 @@
     (show-paren-mode t)				;; Show matching paren
 ))
 
+(use-package speedbar
+  :commands (speedbar)
+  :init (global-set-key (kbd "<f7>") 'speedbar))
+
 (add-hook
  'find-file-hook
  (lambda () (define-coding-system-alias 'UTF-8 'utf-8)))
@@ -136,7 +140,8 @@
 ;; Magit
 (use-package magit
   :commands (magit-status)
-  :load-path "~/.emacs.d/magit/")
+  :load-path "~/.emacs.d/magit/"
+  :init  (global-set-key (kbd "C-x g") 'magit-status))
 
 (use-package yasnippet
   :if (not noninteractive)
