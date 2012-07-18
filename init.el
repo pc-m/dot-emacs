@@ -66,6 +66,10 @@
 	    (newline-mark 10 [36 10])
 	    (tab-mark 9 [8617 9] [92 9])))))
 
+(use-package php+-mode
+  :mode (("\\.inc$" . php+-mode)
+	 ("\\.php$" . php+-mode)))
+
 (use-package python
   :bind ("C-c C-j" . run-nosetests)
   :mode ("\\.py$" . python-mode)
