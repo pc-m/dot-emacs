@@ -1,4 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/plugins/use-package")
 (add-to-list 'load-path "/usr/local/share/emacs/site-list")
 
 (require 'use-package)
