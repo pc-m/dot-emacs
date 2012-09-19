@@ -20,6 +20,16 @@
 			  (quote ("/home/pcm/dev/xivo/stat/xivo-stat"
 				  "/home/pcm/dev/xivo/dao/xivo-dao")))))))
 
+;; Disable all flymake extensions
+(setq flymake-allowed-file-name-masks (list))
+
+(use-package cc-mode
+  :mode (("\\.h\\(h?\\|xx\\|pp\\)\\'" . c-mode)
+	 ("\\.c\\'"                   . c-mode))
+  :config
+  (progn
+    (message "Starting CC-mode")))
+
 (use-package color-theme
   :init
   (progn
