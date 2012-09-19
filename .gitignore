@@ -1,1 +1,4 @@
 *.elc
+semanticdb/
+tramp
+srecode-map.el
