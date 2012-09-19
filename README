@@ -1,1 +1,9 @@
-My emacs config files
+My Emacs configuration files
+
+Dependencies:
+color-theme - apt-get install emacs-goodies-extra-el
+magit - apt-get install magit
+pymacs - apt-get install pymacs
+ropemacs - apt-get install python-ropemacs
+use-package - git clone git://github.com/jwiegley/use-package.git
+yasnippet - git clone git://github.com/capitaomorte/yasnippet

@@ -27,14 +27,19 @@
     (color-theme-initialize)				;; Load color themes
     (color-theme-charcoal-black)			;; Set a color theme
     (set-face-attribute 'default nil :height 100)	;; Set font size
-    (display-battery-mode 1)				;; Show battery status
     (column-number-mode t)				;; Show column number
     (setq visible-bell nil)				;; Turn off visual bell
     (setq ring-bell-function 'ignore)			;; Turn off audible bell
     (transient-mark-mode 0)				;; No selection hl
     (tool-bar-mode 0)					;; No tool bar
-    (show-paren-mode t)				;; Show matching paren
+    (show-paren-mode t)					;; Show matching paren
 ))
+
+(use-package scrollbar-mode
+  :commands (scroll-bar-mode)
+  :init
+  (progn
+    (scroll-bar-mode 0)))
 
 (use-package speedbar
   :commands (speedbar)
@@ -51,7 +56,6 @@
   :commands whitespace-mode
   :init
   (progn
-    (message "Initializing whitespace mode...")
     (add-hook 'find-file-hook
 	      (lambda ()
 		(whitespace-mode t)))
@@ -79,7 +83,7 @@
   :config
   (progn
     (message "Configuring python...")
-    (setq python-python-command "python2")
+    (setq python-python-command "python")
     (setq py-pychecker-command "pyflakespep8.py")
     (setq py-pychecker-command-args (quote ("")))
     (defun run-nosetests ()
@@ -113,7 +117,7 @@
   :init
   (progn
     (message "Initializing pymacs...")
-    (setenv "PYMACS_PYTHON" "python2"))
+    (setenv "PYMACS_PYTHON" "python"))
   :config
   (progn
     (message "Configuring pymacs...")
