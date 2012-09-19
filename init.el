@@ -42,7 +42,7 @@
     (setq ring-bell-function 'ignore)			;; Turn off audible bell
     (transient-mark-mode 0)				;; No selection hl
     (tool-bar-mode 0)					;; No tool bar
-    (show-paren-mode t)					;; Show matching paren
+    (show-paren-mode t)				;; Show matching paren
 ))
 
 (use-package scrollbar-mode
@@ -66,12 +66,12 @@
   :commands whitespace-mode
   :init
   (progn
+    (setq whitespace-line-column 120)
     (add-hook 'find-file-hook
 	      (lambda ()
 		(whitespace-mode t)))
     (setq whitespace-display-mappings
-	  '(
-	    (space-mark 32 [32] [46])
+	  '((space-mark 32 [32] [46])
 	    (space-mark 160 [164] [95])
 	    (space-mark 2208 [2212] [95])
 	    (space-mark 2336 [2340] [95])
