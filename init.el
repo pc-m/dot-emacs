@@ -24,11 +24,9 @@
 (setq flymake-allowed-file-name-masks (list))
 
 (use-package cc-mode
-  :mode (("\\.h\\(h?\\|xx\\|pp\\)\\'" . c-mode)
-	 ("\\.c\\'"                   . c-mode))
   :config
   (progn
-    (message "Starting CC-mode")))
+    (setq c-default-style '((c-mode . "k&r")))))
 
 (use-package color-theme
   :init
