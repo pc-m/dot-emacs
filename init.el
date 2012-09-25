@@ -68,16 +68,15 @@
     (setq whitespace-line-column 120)
     (add-hook 'find-file-hook
 	      (lambda ()
-		(whitespace-mode t)))
-    (setq whitespace-display-mappings
-	  '((space-mark 32 [32] [46])
-	    (space-mark 160 [164] [95])
-	    (space-mark 2208 [2212] [95])
-	    (space-mark 2336 [2340] [95])
-	    (space-mark 3616 [3620] [95])
-	    (space-mark 3872 [3876] [95])
-	    (newline-mark 10 [36 10])
-	    (tab-mark 9 [8617 9] [92 9])))))
+		(whitespace-mode t))))
+  :config
+  (progn
+    (delete 'space-mark whitespace-style) ;; Remove space markers
+    (delete 'newline-mark whitespace-style) ;; Remove newline markers
+    (delete 'spaces whitespace-style) ;; Remove space background
+    (delete 'lines whitespace-style) ;; Remove long lines color
+    (delete 'indentation whitespace-style))) ;; Remove tabs color
+
 
 (use-package php+-mode
   :mode (("\\.inc$" . php+-mode)
