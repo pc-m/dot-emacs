@@ -44,6 +44,12 @@
     (show-paren-mode t)				;; Show matching paren
 ))
 
+;; Fill column indicator
+(use-package fill-column-indicator
+  :commands fci-mode
+  :init
+  (add-hook 'after-change-major-mode-hook 'fci-mode 1))
+
 (use-package scrollbar-mode
   :commands (scroll-bar-mode)
   :init
