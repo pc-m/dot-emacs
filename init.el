@@ -7,6 +7,9 @@
 ;; Start in server mode
 (server-start)
 
+;; Easy buffer switching
+(iswitchb-mode 1)
+
 ;; Avoid being prompted for variables set in .dir-locals.el
 (setq safe-local-variable-values
       (quote ((eval progn
@@ -32,7 +35,6 @@
 (use-package color-theme
   :init
   (progn
-    (message "Customizing UI")
     (color-theme-initialize)				;; Load color themes
     (color-theme-charcoal-black)			;; Set a color theme
     (set-face-attribute 'default nil :height 100)	;; Set font size
