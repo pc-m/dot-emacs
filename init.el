@@ -86,10 +86,6 @@
     (delete 'indentation whitespace-style))) ;; Remove tabs color
 
 
-(use-package php+-mode
-  :mode (("\\.inc$" . php+-mode)
-	 ("\\.php$" . php+-mode)))
-
 (use-package python
   :bind ("C-c C-j" . run-nosetests)
   :mode ("\\.py$" . python-mode)
