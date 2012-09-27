@@ -202,3 +202,9 @@
 ;; Lua
 (setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+
+;; Enable narrowing of region
+(put 'narrow-to-region 'disabled nil)
+
+;; Mouse middle-click yanking no position
+(setq mouse-yank-at-point t)
