@@ -7,8 +7,8 @@
 ;; Start in server mode
 (server-start)
 
-;; Easy buffer switching
-(iswitchb-mode 1)
+;; Interactive search
+(ido-mode t)
 
 ;; Avoid being prompted for variables set in .dir-locals.el
 (setq safe-local-variable-values
@@ -208,3 +208,7 @@
 
 ;; Mouse middle-click yanking no position
 (setq mouse-yank-at-point t)
+
+;; C-x C-m and C-c C-m == M-x
+(global-set-key "\C-x\C-m" 'execute-extended-command)
+(global-set-key "\C-c\C-m" 'execute-extended-command)
