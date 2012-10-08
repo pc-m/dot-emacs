@@ -1,6 +1,7 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/plugins/use-package")
 (add-to-list 'load-path "/usr/local/share/emacs/site-list")
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 
 (require 'use-package)
 
@@ -180,25 +181,6 @@
   :load-path "~/.emacs.d/magit/"
   :init  (global-set-key (kbd "C-x g") 'magit-status))
 
-(use-package yasnippet
-  :if (not noninteractive)
-  :diminish yas/minor-mode
-  :commands (yas/minor-mode yas/expand)
-  :mode ("/\\.emacs\\.d/snippets/" . snippet-mode)
-  :load-path "~/.emacs.d/plugins/yasnippet"
-  :init
-  (progn
-    (message "Initializing yasnippet...")
-    (add-hook 'python-mode-hook
-	      (lambda ()
-		(yas/minor-mode 1))))
-  :config
-  (progn
-    (message "Configuring yasnippet...")
-    (yas/initialize)
-    (yas/load-directory (expand-file-name "snippets/" user-emacs-directory))
-    (bind-key "<tab>" 'yas/next-field-or-maybe-expand yas/keymap)))
-
 ;; Lua
 (setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
@@ -212,3 +194,7 @@
 ;; C-x C-m and C-c C-m == M-x
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-c\C-m" 'execute-extended-command)
+
+;; Enable snippets
+(require 'yasnippet)
+(yas/global-mode 1)
