@@ -69,7 +69,7 @@
    (progn
      (define-coding-system-alias 'UTF-8 'utf-8)
      ;; Change default font
-     (set-face-attribute 'default nil :font "ABeeZee-8"))))
+     (set-face-attribute 'default nil :font "ABeeZee-10"))))
 
 ;; Key bindings
 (global-set-key (kbd "C-z") 'undo)
