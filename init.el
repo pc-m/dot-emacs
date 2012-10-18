@@ -11,20 +11,6 @@
 ;; Interactive search
 (ido-mode t)
 
-;; Avoid being prompted for variables set in .dir-locals.el
-(setq safe-local-variable-values
-      (quote ((eval progn
-		    (setq project-pythonpath
-			  (quote ("/home/pcm/dev/xivo/skaro/lib-python"
-				  "/home/pcm/dev/xivo/dird/xivo-dird"))))
-	      (eval progn
-		    (setq project-pythonpath
-			  (quote ("/home/pcm/dev/xivo/skaro/lib-python"))))
-	      (eval progn
-		    (setq project-pythonpath
-			  (quote ("/home/pcm/dev/xivo/stat/xivo-stat"
-				  "/home/pcm/dev/xivo/dao/xivo-dao")))))))
-
 ;; Disable all flymake extensions
 (setq flymake-allowed-file-name-masks (list))
 
