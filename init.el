@@ -4,6 +4,7 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 
 (require 'use-package)
+(load "projects.el")
 
 ;; Start in server mode
 (server-start)
