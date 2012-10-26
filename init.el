@@ -34,6 +34,10 @@
     (show-paren-mode t)				;; Show matching paren
 ))
 
+;; org-mode
+(setq org-todo-keywords
+       '((sequence "TODO" "IN PROGRESS" "|" "DONE")))
+
 ;; Fill column indicator
 (use-package fill-column-indicator
   :commands fci-mode
