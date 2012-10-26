@@ -14,12 +14,12 @@
 (dir-locals-set-class-variables
  'xivo-client-qt-project
  '((nil . ((fill-column . 80)))
-   (c-mode . ((mode . c++)
-	      (c-basic-indent . 4)
-	      (indent-tabs-mode . nil)))
    (c++-mode . ((c-file-style . "stroustrup")
 		(c-basic-indent . 4)
-		(indent-tabs-mode . nil)))))
+		(indent-tabs-mode . nil)))
+   (c-mode . ((mode . c++)
+	      (c-basic-indent . 4)
+	      (indent-tabs-mode . nil)))))
 
 (dir-locals-set-directory-class
  "/home/pcm/dev/xivo/client-qt" 'xivo-client-qt-project)
