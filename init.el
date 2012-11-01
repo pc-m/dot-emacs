@@ -202,3 +202,7 @@
 ;; Enable snippets
 (require 'yasnippet)
 (yas-global-mode 1)
+
+
+;; org-mode
+(add-to-list 'auto-mode-alist '("\\.feature$" . org-mode))
