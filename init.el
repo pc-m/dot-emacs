@@ -90,6 +90,9 @@
     (delete 'lines whitespace-style) ;; Remove long lines color
     (delete 'indentation whitespace-style))) ;; Remove tabs color
 
+(use-package feature-mode
+  :mode ("\\.feature$" . feature-mode))
+
 
 (use-package python
   :bind ("C-c C-j" . run-nosetests)
@@ -202,7 +205,3 @@
 ;; Enable snippets
 (require 'yasnippet)
 (yas-global-mode 1)
-
-
-;; org-mode
-(add-to-list 'auto-mode-alist '("\\.feature$" . org-mode))
