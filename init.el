@@ -205,3 +205,7 @@
 ;; Enable snippets
 (require 'yasnippet)
 (yas-global-mode 1)
+
+;; golang
+(add-to-list 'load-path "/usr/local/go/misc/emacs" t)
+(require 'go-mode-load)
