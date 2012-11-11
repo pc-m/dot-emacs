@@ -19,12 +19,16 @@
 (defconst xivo-ctid-pythonpath (list xivo-dao-python-root
 				     xivo-dird-python-root
 				     xivo-libpython-root))
+(defconst xivo-dao-pythonpath (list xivo-libpython-root))
 
 ;; Class variables
 (dir-locals-set-class-variables
  'xivo-ctid-project
- `((nil . ((fill-column . 100)))
-   (python-mode . ((project-pythonpath . ,xivo-ctid-pythonpath)))))
+ `((python-mode . ((project-pythonpath . ,xivo-ctid-pythonpath)))))
+
+(dir-locals-set-class-variables
+ 'xivo-dao-project
+ `((python-mode . ((project-pythonpath . ,xivo-dao-pythonpath)))))
 
 (dir-locals-set-class-variables
  'xivo-client-qt-project
@@ -43,8 +47,12 @@
 (dir-locals-set-directory-class
  xivo-ctid-root 'xivo-ctid-project)
 
+(dir-locals-set-directory-class
+ xivo-dao-root 'xivo-dao-project)
+
 ;; Safe evals and variables
 (setq safe-local-variable-values
       `((c-basic-indent . 4)
 	(c-basic-indent)
-	(project-pythonpath . ,xivo-ctid-pythonpath)))
+	(project-pythonpath . ,xivo-ctid-pythonpath)
+	(project-pythonpath . ,xivo-dao-pythonpath)))
