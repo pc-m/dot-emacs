@@ -4,6 +4,7 @@
 (defconst home-path "/home/pcm")
 (defconst dev-path (concat home-path "/dev"))
 (defconst xivo-path (concat dev-path "/xivo"))
+(defconst xivo-agid-root (concat xivo-path "/agid"))
 (defconst xivo-ctid-root (concat xivo-path "/ctid"))
 (defconst xivo-dao-root (concat xivo-path "/dao"))
 (defconst xivo-client-root (concat xivo-path "/client-qt"))
@@ -20,11 +21,17 @@
 				     xivo-dird-python-root
 				     xivo-libpython-root))
 (defconst xivo-dao-pythonpath (list xivo-libpython-root))
+(defconst xivo-agid-pythonpath (list xivo-dird-python-root
+				     xivo-libpython-root))
 
 ;; Class variables
 (dir-locals-set-class-variables
  'xivo-ctid-project
  `((python-mode . ((project-pythonpath . ,xivo-ctid-pythonpath)))))
+
+(dir-locals-set-class-variables
+ 'xivo-agid-project
+ `((python-mode . ((project-pythonpath . ,xivo-agid-pythonpath)))))
 
 (dir-locals-set-class-variables
  'xivo-dao-project
@@ -48,6 +55,9 @@
  xivo-ctid-root 'xivo-ctid-project)
 
 (dir-locals-set-directory-class
+ xivo-agid-root 'xivo-agid-project)
+
+(dir-locals-set-directory-class
  xivo-dao-root 'xivo-dao-project)
 
 ;; Safe evals and variables
@@ -55,4 +65,5 @@
       `((c-basic-indent . 4)
 	(c-basic-indent)
 	(project-pythonpath . ,xivo-ctid-pythonpath)
+	(project-pythonpath . ,xivo-agid-pythonpath)
 	(project-pythonpath . ,xivo-dao-pythonpath)))
