@@ -45,8 +45,6 @@
 
 ;; Safe evals and variables
 (setq safe-local-variable-values
-      '((c-basic-indent . 4)
+      `((c-basic-indent . 4)
 	(c-basic-indent)
-	(project-pythonpath "/home/pcm/dev/xivo/dao/xivo-dao"
-			    "/home/pcm/dev/xivo/dird/xivo-dird"
-			    "/home/pcm/dev/xivo/skaro/lib-python")))
+	(project-pythonpath . ,xivo-ctid-pythonpath)))
