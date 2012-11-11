@@ -93,6 +93,9 @@
 (use-package feature-mode
   :mode ("\\.feature$" . feature-mode))
 
+(use-package php-mode
+  :mode (("\\.php$" . php-mode)
+	 ("\\.inc$" . php-mode)))
 
 (use-package python
   :bind ("C-c C-j" . run-nosetests)
