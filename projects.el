@@ -20,16 +20,9 @@
 				     xivo-dird-python-root
 				     xivo-libpython-root))
 
-;; Safe evals and variables
-(setq safe-local-variable-values
-      (quote ((c-basic-indent . 4)
-	      (c-basic-indent)
-	      (project-pythonpath "/home/pcm/dev/xivo/dao/xivo-dao"
-				  "/home/pcm/dev/xivo/dird/xivo-dird"
-				  "/home/pcm/dev/xivo/skaro/lib-python"))))
-
+;; Class variables
 (dir-locals-set-class-variables
- 'xivo-ctid
+ 'xivo-ctid-project
  `((nil . ((fill-column . 100)))
    (python-mode . ((project-pythonpath . ,xivo-ctid-pythonpath)))))
 
@@ -43,8 +36,17 @@
 	      (c-basic-indent . 4)
 	      (indent-tabs-mode . nil)))))
 
+;; Directory to class variable assignment
 (dir-locals-set-directory-class
  xivo-client-root 'xivo-client-qt-project)
 
 (dir-locals-set-directory-class
- xivo-ctid-root 'xivo-ctid)
+ xivo-ctid-root 'xivo-ctid-project)
+
+;; Safe evals and variables
+(setq safe-local-variable-values
+      '((c-basic-indent . 4)
+	(c-basic-indent)
+	(project-pythonpath "/home/pcm/dev/xivo/dao/xivo-dao"
+			    "/home/pcm/dev/xivo/dird/xivo-dird"
+			    "/home/pcm/dev/xivo/skaro/lib-python")))
