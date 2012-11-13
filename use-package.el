@@ -1,1 +1,1 @@
-use-package/use-package.el
+plugins/use-package/use-package.el

@@ -1,1 +1,1 @@
-use-package/bind-key.el
+plugins/use-package/bind-key.el
