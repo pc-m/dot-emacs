@@ -20,9 +20,9 @@
 (defconst xivo-ctid-pythonpath (list xivo-dao-python-root
 				     xivo-dird-python-root
 				     xivo-libpython-python-root))
-(defconst xivo-dao-pythonpath (list xivo-libpython-root))
+(defconst xivo-dao-pythonpath (list xivo-libpython-python-root))
 (defconst xivo-agid-pythonpath (list xivo-dird-python-root
-				     xivo-libpython-root))
+				     xivo-libpython-python-root))
 
 ;; Class variables
 (dir-locals-set-class-variables
