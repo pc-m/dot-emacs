@@ -9,17 +9,17 @@
 (defconst xivo-dao-root (concat xivo-path "/dao"))
 (defconst xivo-client-root (concat xivo-path "/client-qt"))
 (defconst xivo-dird-root (concat xivo-path "/dird"))
-(defconst xivo-libpython-root (concat xivo-path "/skaro/lib-python"))
+(defconst xivo-libpython-root (concat xivo-path "/lib-python"))
 
 ;; PYTHON ROOT
 (defconst xivo-dao-python-root (concat xivo-dao-root "/xivo-dao"))
-(defconst xivo-libpython-python-root xivo-libpython-root)
+(defconst xivo-libpython-python-root (concat xivo-libpython-root "/xivo-lib-python"))
 (defconst xivo-dird-python-root (concat xivo-dird-root "/xivo-dird"))
 
 ;; PYTHONPATHS
 (defconst xivo-ctid-pythonpath (list xivo-dao-python-root
 				     xivo-dird-python-root
-				     xivo-libpython-root))
+				     xivo-libpython-python-root))
 (defconst xivo-dao-pythonpath (list xivo-libpython-root))
 (defconst xivo-agid-pythonpath (list xivo-dird-python-root
 				     xivo-libpython-root))
