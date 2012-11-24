@@ -211,3 +211,26 @@
 ;; golang
 (add-to-list 'load-path "/usr/local/go/misc/emacs" t)
 (require 'go-mode-load)
+
+(defun get-project-include-path ()
+  "Returns a string containing every include paths of a project prefixed with -I"
+  (if (boundp 'project-include-path)
+    (add-list-prefix "-I" project-include-path)
+    (list "")))
+
+(defun add-list-prefix (prefix l)
+  "Returns a list with all items in l prefixed with 'prefix'"
+  (let ((result))
+    (dolist (item l)
+      (setq result (cons (concat prefix item) result)))
+    result))
+
+(require 'flymake-clang-c++)
+
+(defun run-project-init ()
+  "Run project-init if it exists"
+  (when (boundp 'project-init)
+    (funcall project-init)))
+
+;; Runs project init when a file is loaded
+(add-hook 'find-file-hook 'run-project-init)
