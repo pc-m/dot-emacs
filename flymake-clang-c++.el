@@ -9,7 +9,7 @@
 (defun get-clang-command (file)
   "Returns a list containing the program to run and it's arguments"
   (message "In get-clang-command")
-  (let* ((a1 '("-fsyntax-only" "-fno-color-diagnostics"))
+  (let* ((a1 '("-fsyntax-only" "-fno-color-diagnostics" "-Wno-c++11-extensions"))
          (a2 (get-project-include-path))
          (a3 (list local-file)))
     (message (mapconcat 'identity a1 " "))
