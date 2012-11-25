@@ -36,7 +36,10 @@
                                      xivo-libpython-root))
 
 (defun xivo-client-qt-init ()
+  "Runs some commands to get the XiVO client project properly setup"
+  (message "XiVO client Qt init")
   (setq project-include-path xivo-client-include-path)
+  (flymake-clang-c++-init)
   (flymake-clang-c++-load))
 
 ;; Class variables
@@ -61,8 +64,8 @@
                 (project-init . xivo-client-qt-init)))
    (c-mode . ((mode . c++)
               (c-basic-indent . 4)
-              (indent-tabs-mode . nil)))))
-
+              (indent-tabs-mode . nil)
+              (project-init . xivo-client-qt-init)))))
 
 ;; Directory to class variable assignment
 (dir-locals-set-directory-class

@@ -3,6 +3,9 @@
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 
 (require 'use-package)
+(require 'flymake-clang-c++)
+(add-hook 'c++-mode-hook 'flymake-clang-c++-load)
+
 (load "projects.el")
 
 ;; Start in server mode
@@ -224,8 +227,6 @@
     (dolist (item l)
       (setq result (cons (concat prefix item) result)))
     result))
-
-(require 'flymake-clang-c++)
 
 (defun run-project-init ()
   "Run project-init if it exists"

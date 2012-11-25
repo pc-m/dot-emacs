@@ -26,7 +26,7 @@
     (add-to-list 'flymake-allowed-file-name-masks
                  '("\\.cc\\'" flymake-clang-c++-init))
     (add-to-list 'flymake-allowed-file-name-masks
-                 '("\\.h\\'" flymake-clang-c++-)))
+                 '("\\.h\\'" flymake-clang-c++-init)))
   (flymake-mode t))
 
 (provide 'flymake-clang-c++)
