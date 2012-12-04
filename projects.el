@@ -4,6 +4,7 @@
 (defconst home-path "/home/pcm")
 (defconst dev-path (concat home-path "/dev"))
 (defconst xivo-path (concat dev-path "/xivo"))
+(defconst xivo-agent-root (concat xivo-path "/agent"))
 (defconst xivo-agid-root (concat xivo-path "/agid"))
 (defconst xivo-ctid-root (concat xivo-path "/ctid"))
 (defconst xivo-dao-root (concat xivo-path "/dao"))
@@ -30,11 +31,13 @@
 (defconst xivo-dao-python-root (concat xivo-dao-root "/xivo-dao"))
 (defconst xivo-libpython-python-root (concat xivo-libpython-root "/xivo-lib-python"))
 (defconst xivo-dird-python-root (concat xivo-dird-root "/xivo-dird"))
+(defconst xivo-agent-python-root (concat xivo-agent-root "/xivo-agent"))
 
 ;; PYTHONPATHS
 (defconst xivo-ctid-pythonpath (list xivo-dao-python-root
                                      xivo-dird-python-root
-                                     xivo-libpython-python-root))
+                                     xivo-libpython-python-root
+                                     xivo-agent-python-root))
 (defconst xivo-dao-pythonpath (list xivo-libpython-python-root))
 (defconst xivo-agid-pythonpath (list xivo-dird-python-root
                                      xivo-libpython-root))
