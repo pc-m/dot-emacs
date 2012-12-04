@@ -9,18 +9,22 @@
 (defconst xivo-dao-root (concat xivo-path "/dao"))
 (defconst xivo-client-root (concat xivo-path "/client-qt"))
 (defconst xivo-client-baselib (concat xivo-client-root "/baselib"))
+(defconst xivo-client-xivoclient (concat xivo-client-root "/xivoclient"))
 (defconst xivo-dird-root (concat xivo-path "/dird"))
 (defconst xivo-libpython-root (concat xivo-path "/lib-python"))
 (defconst xivo-client-include-path
   (list "/usr/share/qt4/mkspecs/linux-g++-64"
         xivo-client-baselib
+        xivo-client-xivoclient
         "/usr/include/qt4/QtCore"
         "/usr/include/qt4/QtNetwork"
         "/usr/include/qt4/QtGui"
         "/usr/include/qt4"
         (concat xivo-client-baselib "/json_jsonqt/lib")
         (concat xivo-client-baselib "/src")
-        (concat xivo-client-baselib "/src/storage")))
+        (concat xivo-client-baselib "/src/storage")
+        (concat xivo-client-xivoclient "/src")
+        (concat xivo-client-xivoclient "/src/xletlib")))
 
 ;; PYTHON ROOT
 (defconst xivo-dao-python-root (concat xivo-dao-root "/xivo-dao"))
