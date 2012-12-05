@@ -25,7 +25,8 @@
         (concat xivo-client-baselib "/src")
         (concat xivo-client-baselib "/src/storage")
         (concat xivo-client-xivoclient "/src")
-        (concat xivo-client-xivoclient "/src/xletlib")))
+        (concat xivo-client-xivoclient "/src/xletlib")
+        (concat xivo-client-xivoclient "/obj")))
 
 ;; PYTHON ROOT
 (defconst xivo-dao-python-root (concat xivo-dao-root "/xivo-dao"))
