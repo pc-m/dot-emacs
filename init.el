@@ -46,12 +46,6 @@
   :init
   (add-hook 'after-change-major-mode-hook 'fci-mode 1))
 
-(use-package scrollbar-mode
-  :commands (scroll-bar-mode)
-  :init
-  (progn
-    (scroll-bar-mode 0)))
-
 (use-package speedbar
   :commands (speedbar)
   :init (global-set-key (kbd "<f7>") 'speedbar))
@@ -62,16 +56,9 @@
    (progn
      (define-coding-system-alias 'UTF-8 'utf-8))))
 
-;; Change default font
-(defun get-desired-font-size ()
-  "returns the desired font size depending on the screen resolution"
-  (if (= (x-display-pixel-width) 1360)
-      "8"
-    "10"))
-
 (set-face-attribute
  'default nil
- :font (concat "Droid sans mono-" (get-desired-font-size)))
+ :font (concat "Droid sans mono-" "11"))
 
 ;; Key bindings
 (global-set-key (kbd "C-z") 'undo)
