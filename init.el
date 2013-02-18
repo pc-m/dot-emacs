@@ -54,6 +54,7 @@
  'find-file-hook
  (lambda ()
    (progn
+     (define-coding-system-alias 'utf8 'utf-8)
      (define-coding-system-alias 'UTF-8 'utf-8))))
 
 (set-face-attribute
