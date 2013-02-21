@@ -37,6 +37,7 @@
     (tool-bar-mode 0)					;; No tool bar
     (menu-bar-mode 0)					;; No menu bar
     (show-paren-mode t)				;; Show matching paren
+    (global-hl-line-mode t)				;; Hightlight current line
 ))
 
 ;; org-mode
