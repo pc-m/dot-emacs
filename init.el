@@ -1,7 +1,9 @@
 (add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/emacs-color-theme-solarized")
 (add-to-list 'load-path "/usr/local/share/emacs/site-list")
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 
+(require 'color-theme-solarized)
 (require 'use-package)
 (require 'flymake-clang-c++)
 (add-hook 'c++-mode-hook 'flymake-clang-c++-load)
@@ -26,7 +28,7 @@
   :init
   (progn
     (color-theme-initialize)				;; Load color themes
-    (color-theme-charcoal-black)			;; Set a color theme
+    (color-theme-solarized-dark)			;; Set a color theme
     (set-face-attribute 'default nil :height 100)	;; Set font size
     (column-number-mode t)				;; Show column number
     (setq visible-bell nil)				;; Turn off visual bell
