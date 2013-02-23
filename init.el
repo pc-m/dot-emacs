@@ -8,6 +8,8 @@
 (require 'flymake-clang-c++)
 (add-hook 'c++-mode-hook 'flymake-clang-c++-load)
 
+(require 'xivo-cpp-style)
+
 (load "projects.el")
 
 ;; Start in server mode
