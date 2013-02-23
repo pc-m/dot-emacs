@@ -108,7 +108,16 @@
     (defun run-nosetests ()
       "Runs nosetests with the project defined pythonpath"
       (interactive)
-      (compile (get-nosetests-command)))
+      (let ((command (concat (get-nosetests-command) " " (get-test-target))))
+	(message command)
+	(compile (concat command))))
+    (defun get-test-target ()
+      "Returns the name of the test module of an empty string"
+      (if (buffer-file-name)
+	  (if (equal "test" (substring (file-name-nondirectory (buffer-file-name)) 0 4))
+	      (buffer-file-name)
+	    "")
+	""))
     (defun get-nosetests-command ()
       "Returns [PYTHONPATH=[project-pythonpath][:global-pythonpath]] nosetests"
       (let ((python-pythonpath (build-pythonpath)))
