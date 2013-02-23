@@ -17,6 +17,7 @@
 
 ;; Interactive search
 (ido-mode t)
+(defalias 'list-buffers 'ibuffer)
 
 ;; Disable all flymake extensions
 (setq flymake-allowed-file-name-masks (list))
