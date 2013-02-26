@@ -19,6 +19,12 @@
 (ido-mode t)
 (defalias 'list-buffers 'ibuffer)
 
+;; Append a directory part separated by a | to buffer name with non-unique names
+(require 'uniquify)
+(setq
+ uniquify-buffer-name-style 'post-forward
+ uniquify-separator "|")
+
 ;; Disable all flymake extensions
 (setq flymake-allowed-file-name-masks (list))
 
