@@ -25,6 +25,12 @@
  uniquify-buffer-name-style 'post-forward
  uniquify-separator "|")
 
+;; Window movement using Shift-arrow
+(global-set-key (kbd "C-c <left>")  'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c <up>")    'windmove-up)
+(global-set-key (kbd "C-c <down>")  'windmove-down)
+
 ;; Disable all flymake extensions
 (setq flymake-allowed-file-name-masks (list))
 
