@@ -19,6 +19,9 @@
 (ido-mode t)
 (defalias 'list-buffers 'ibuffer)
 
+;; Default to 80 column
+(setq fill-column 80)
+
 ;; Append a directory part separated by a | to buffer name with non-unique names
 (require 'uniquify)
 (setq
@@ -51,6 +54,7 @@
     (transient-mark-mode 0)				;; No selection hl
     (tool-bar-mode 0)					;; No tool bar
     (menu-bar-mode 0)					;; No menu bar
+    (scroll-bar-mode 0)
     (show-paren-mode t)				;; Show matching paren
     (global-hl-line-mode t)				;; Hightlight current line
 ))
@@ -78,7 +82,7 @@
 
 (set-face-attribute
  'default nil
- :font (concat "Droid sans mono-" "11"))
+ :font (concat "Droid sans mono-" "10"))
 
 ;; Key bindings
 (global-set-key (kbd "C-z") 'undo)
