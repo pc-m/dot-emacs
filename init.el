@@ -15,12 +15,12 @@
 ;; Start in server mode
 (server-start)
 
+;; Make pages 80 columns width
+(setq-default fill-column 80)
+
 ;; Interactive search
 (ido-mode t)
 (defalias 'list-buffers 'ibuffer)
-
-;; Default to 80 column
-(setq fill-column 80)
 
 ;; Append a directory part separated by a | to buffer name with non-unique names
 (require 'uniquify)
