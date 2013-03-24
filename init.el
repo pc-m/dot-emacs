@@ -2,6 +2,7 @@
 (add-to-list 'load-path "~/.emacs.d/emacs-color-theme-solarized")
 (add-to-list 'load-path "/usr/local/share/emacs/site-list")
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+(add-to-list 'load-path "~/.emacs.d/plugins/scala-dist/tool-support/src/emacs")
 
 (require 'color-theme-solarized)
 (require 'use-package)
@@ -21,6 +22,8 @@
 ;; Interactive search
 (ido-mode t)
 (defalias 'list-buffers 'ibuffer)
+
+(require 'scala-mode-auto)
 
 (defun duplicate-line (arg)
   "Duplicate current line, leaving point in lower line."
