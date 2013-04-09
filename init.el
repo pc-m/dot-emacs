@@ -101,12 +101,6 @@
 (setq org-todo-keywords
        '((sequence "TODO" "IN PROGRESS" "|" "DONE")))
 
-;; Fill column indicator
-(use-package fill-column-indicator
-  :commands fci-mode
-  :init
-  (add-hook 'after-change-major-mode-hook 'fci-mode 1))
-
 (use-package speedbar
   :commands (speedbar)
   :init (global-set-key (kbd "<f7>") 'speedbar))
