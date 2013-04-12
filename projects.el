@@ -2,8 +2,8 @@
 
 ;; PATH
 (defconst home-path "/home/pcm")
-(defconst dev-path (concat home-path "/dev"))
-(defconst xivo-path (concat dev-path "/xivo"))
+(defconst dev-path (concat home-path "/d"))
+(defconst xivo-path (concat dev-path "/x"))
 (defconst xivo-agent-root (concat xivo-path "/agent"))
 (defconst xivo-agid-root (concat xivo-path "/agid"))
 (defconst xivo-ctid-root (concat xivo-path "/ctid"))
