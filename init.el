@@ -9,6 +9,7 @@
 (add-hook 'c++-mode-hook 'flymake-clang-c++-load)
 
 (require 'xivo-cpp-style)
+(require 'xcscope)
 
 (load "projects.el")
 
