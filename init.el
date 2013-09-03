@@ -2,6 +2,9 @@
 (add-to-list 'load-path "~/.emacs.d/emacs-color-theme-solarized")
 (add-to-list 'load-path "/usr/local/share/emacs/site-list")
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+(add-to-list 'load-path "~/.emacs.d/evil")
+(require 'evil)
+(evil-mode 1)
 
 (require 'color-theme-solarized)
 (require 'use-package)
