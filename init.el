@@ -69,7 +69,8 @@
 (global-set-key [\M-up] 'move-text-up)
 (global-set-key [\M-down] 'move-text-down)
 
-
+;; Use Ctrl-F11 to recompile
+(global-set-key [\C-f11] 'recompile)
 
 (defun duplicate-line (arg)
   "Duplicate current line, leaving point in lower line."
