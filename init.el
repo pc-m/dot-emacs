@@ -121,7 +121,7 @@
 (use-package cc-mode
   :config
   (progn
-    (setq c-default-style '((c-mode . "k&r")))))
+    (setq c-default-style '((c-mode . "linux")))))
 
 (use-package color-theme
   :init
