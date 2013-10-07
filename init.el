@@ -26,6 +26,7 @@
 (require 'xivo-cpp-style)
 (require 'xcscope)
 
+;; Project specific configuration
 (load "projects.el")
 
 ;; Start in server mode

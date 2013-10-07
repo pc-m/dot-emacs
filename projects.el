@@ -2,10 +2,11 @@
 
 ;; PATH
 (defconst home-path "/home/pcm")
-(defconst dev-path (concat home-path "/d"))
+(defconst dev-path (concat home-path "/dev"))
+(defconst xivo-path (concat dev-path "/xivo"))
 (defconst xivo-agent-root (concat dev-path "/xivo-agent"))
 (defconst xivo-agid-root (concat dev-path "/xivo-agid"))
-(defconst xivo-ctid-root (concat dev-path "/xivo-ctid"))
+(defconst xivo-ctid-root (concat xivo-path "/xivo-ctid"))
 (defconst xivo-dao-root (concat dev-path "/xivo-dao"))
 (defconst xivo-client-root (concat dev-path "/xivo-client-qt"))
 (defconst xivo-client-baselib (concat xivo-client-root "/baselib"))
@@ -52,7 +53,8 @@
 ;; Class variables
 (dir-locals-set-class-variables
  'xivo-ctid-project
- `((python-mode . ((project-pythonpath . ,xivo-ctid-pythonpath)))))
+ `((nil . ((compile-command . "xm cti.unittest")))
+   (python-mode . ((project-pythonpath . ,xivo-ctid-pythonpath)))))
 
 (dir-locals-set-class-variables
  'xivo-agid-project
