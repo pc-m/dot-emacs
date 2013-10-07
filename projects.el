@@ -5,7 +5,7 @@
 (defconst dev-path (concat home-path "/dev"))
 (defconst xivo-path (getenv "XIVO_PATH"))
 (defconst xivo-agent-root (concat dev-path "/xivo-agent"))
-(defconst xivo-agid-root (concat dev-path "/xivo-agid"))
+(defconst xivo-agid-root (concat xivo-path "/xivo-agid"))
 (defconst xivo-ctid-root (concat xivo-path "/xivo-ctid"))
 (defconst xivo-dao-root (concat dev-path "/xivo-dao"))
 (defconst xivo-client-root (concat dev-path "/xivo-client-qt"))
@@ -59,7 +59,9 @@
 
 (dir-locals-set-class-variables
  'xivo-agid-project
- `((python-mode . ((project-pythonpath . ,xivo-agid-pythonpath)))))
+ `((nil . ((compile-command . "xm agi.unittest")
+	   (tags-file-name . ,(concat xivo-agid-root "/TAGS"))))
+   (python-mode . ((project-pythonpath . ,xivo-agid-pythonpath)))))
 
 (dir-locals-set-class-variables
  'xivo-dao-project
@@ -95,4 +97,5 @@
         (project-pythonpath . ,xivo-agid-pythonpath)
         (project-pythonpath . ,xivo-dao-pythonpath)
 	(tags-file-name . ,(concat xivo-ctid-root "/TAGS"))
+	(tags-file-name . ,(concat xivo-agid-root "/TAGS"))
         (project-init . xivo-client-qt-init)))
