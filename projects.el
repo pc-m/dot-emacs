@@ -53,7 +53,8 @@
 ;; Class variables
 (dir-locals-set-class-variables
  'xivo-ctid-project
- `((nil . ((compile-command . "xm cti.unittest")))
+ `((nil . ((compile-command . "xm cti.unittest")
+	   (tags-file-name . ,(concat xivo-ctid-root "/TAGS"))))
    (python-mode . ((project-pythonpath . ,xivo-ctid-pythonpath)))))
 
 (dir-locals-set-class-variables
@@ -93,4 +94,5 @@
         (project-pythonpath . ,xivo-ctid-pythonpath)
         (project-pythonpath . ,xivo-agid-pythonpath)
         (project-pythonpath . ,xivo-dao-pythonpath)
+	(tags-file-name . ,(concat xivo-ctid-root "/TAGS"))
         (project-init . xivo-client-qt-init)))
