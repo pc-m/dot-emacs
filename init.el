@@ -6,10 +6,6 @@
 (require 'evil)
 (evil-mode 1)
 
-;; Add bash aliases to emacs shell and compile
-(setq shell-file-name "bash")
-(setq shell-command-switch "-ic")
-
 ;(require 'color-theme-solarized)
 (require 'use-package)
 (require 'flymake-clang-c++)
