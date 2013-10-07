@@ -3,7 +3,7 @@
 ;; PATH
 (defconst home-path "/home/pcm")
 (defconst dev-path (concat home-path "/dev"))
-(defconst xivo-path (concat dev-path "/xivo"))
+(defconst xivo-path (getenv "XIVO_PATH"))
 (defconst xivo-agent-root (concat dev-path "/xivo-agent"))
 (defconst xivo-agid-root (concat dev-path "/xivo-agid"))
 (defconst xivo-ctid-root (concat xivo-path "/xivo-ctid"))
