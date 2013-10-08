@@ -13,6 +13,7 @@
 (defconst xivo-client-xivoclient (concat xivo-client-root "/xivoclient"))
 (defconst xivo-dird-root (concat dev-path "/xivo-dird"))
 (defconst xivo-libpython-root (concat dev-path "/xivo-lib-python"))
+(defconst xivo-libsccp-root (concat xivo-path "/xivo-libsccp"))
 (defconst xivo-client-include-path
   (list "/usr/share/qt4/mkspecs/linux-g++-64"
         xivo-client-baselib
@@ -76,6 +77,13 @@
 	      (c-file-style . "xivo")
               (project-init . xivo-client-qt-init)))))
 
+(dir-locals-set-class-variables
+ 'xivo-libsccp-project
+ `((nil . ((fill-column . 90)
+	   (compile-command . "xm sccp.sync")
+	   (tags-file-name . ,(concat xivo-libsccp-root "/TAGS"))))
+   (c-mode . ((c-file-style . "asterisk")))))
+
 ;; Directory to class variable assignment
 (dir-locals-set-directory-class
  xivo-client-root 'xivo-client-qt-project)
@@ -89,6 +97,9 @@
 (dir-locals-set-directory-class
  xivo-dao-root 'xivo-dao-project)
 
+(dir-locals-set-directory-class
+ xivo-libsccp-root 'xivo-libsccp-project)
+
 ;; Safe evals and variables
 (setq safe-local-variable-values
       `((c-basic-indent . 4)
@@ -98,4 +109,5 @@
         (project-pythonpath . ,xivo-dao-pythonpath)
 	(tags-file-name . ,(concat xivo-ctid-root "/TAGS"))
 	(tags-file-name . ,(concat xivo-agid-root "/TAGS"))
+	(tags-file-name . ,(concat xivo-libsccp-root "/TAGS"))
         (project-init . xivo-client-qt-init)))

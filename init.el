@@ -20,6 +20,7 @@
 (global-auto-complete-mode t)
 
 (require 'xivo-cpp-style)
+(require 'asterisk-c-style)
 (require 'xcscope)
 
 ;; Project specific configuration
