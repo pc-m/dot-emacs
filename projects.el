@@ -81,7 +81,8 @@
  'xivo-libsccp-project
  `((nil . ((fill-column . 90)
 	   (compile-command . "xm sccp.sync")
-	   (tags-file-name . ,(concat xivo-libsccp-root "/TAGS"))))
+	   (tags-file-name . ,(concat xivo-libsccp-root "/TAGS"))
+	   (cscope-initial-directory . ,xivo-libsccp-root)))
    (c-mode . ((c-file-style . "asterisk")))))
 
 ;; Directory to class variable assignment
@@ -110,4 +111,5 @@
 	(tags-file-name . ,(concat xivo-ctid-root "/TAGS"))
 	(tags-file-name . ,(concat xivo-agid-root "/TAGS"))
 	(tags-file-name . ,(concat xivo-libsccp-root "/TAGS"))
+	(cscope-initial-directory . ,xivo-libsccp-root)
         (project-init . xivo-client-qt-init)))
