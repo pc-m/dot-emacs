@@ -11,6 +11,7 @@
 (setq initial-scratch-message "")
 
 (require 'undo-tree)
+(require 'dirtree)
 (require 'evil)
 (evil-mode 1)
 
