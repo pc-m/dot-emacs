@@ -3,6 +3,13 @@
 (add-to-list 'load-path "/usr/local/share/emacs/site-list")
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 (add-to-list 'load-path "~/.emacs.d/evil")
+
+; no splash screen
+(setq inhibit-startup-message t)
+
+; empty scrath buffer
+(setq initial-scratch-message "")
+
 (require 'undo-tree)
 (require 'evil)
 (evil-mode 1)
