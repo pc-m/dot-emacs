@@ -14,6 +14,7 @@
 (defconst xivo-dird-root (concat dev-path "/xivo-dird"))
 (defconst xivo-libpython-root (concat dev-path "/xivo-lib-python"))
 (defconst xivo-libsccp-root (concat xivo-path "/xivo-libsccp"))
+(defconst xivo-webi-root (concat xivo-path "/xivo-web-interface"))
 (defconst xivo-client-include-path
   (list "/usr/share/qt4/mkspecs/linux-g++-64"
         xivo-client-baselib
@@ -85,6 +86,11 @@
 	   (cscope-initial-directory . ,xivo-libsccp-root)))
    (c-mode . ((c-file-style . "asterisk")))))
 
+(dir-locals-set-class-variables
+ 'xivo-webi-project
+ `((nil . ((compile-command . "xm webi.sync")
+	   (tags-file-name . ,(concat xivo-webi-root "/TAGS"))))))
+
 ;; Directory to class variable assignment
 (dir-locals-set-directory-class
  xivo-client-root 'xivo-client-qt-project)
@@ -101,6 +107,9 @@
 (dir-locals-set-directory-class
  xivo-libsccp-root 'xivo-libsccp-project)
 
+(dir-locals-set-directory-class
+ xivo-webi-root 'xivo-webi-project)
+
 ;; Safe evals and variables
 (setq safe-local-variable-values
       `((c-basic-indent . 4)
@@ -111,5 +120,6 @@
 	(tags-file-name . ,(concat xivo-agid-root "/TAGS"))
 	(tags-file-name . ,(concat xivo-dao-root "/TAGS"))
 	(tags-file-name . ,(concat xivo-libsccp-root "/TAGS"))
+	(tags-file-name . ,(concat xivo-webi-root "/TAGS"))
 	(cscope-initial-directory . ,xivo-libsccp-root)
         (project-init . xivo-client-qt-init)))
