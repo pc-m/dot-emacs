@@ -10,6 +10,7 @@
 ; empty scrath buffer
 (setq initial-scratch-message "")
 
+(require 'info+)
 (require 'undo-tree)
 (require 'dirtree)
 (require 'evil)
