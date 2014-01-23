@@ -238,7 +238,7 @@
   (progn
     (message "Configuring python...")
     (setq python-python-command "python")
-    (setq py-pychecker-command "pyflakespep8.py")
+    (setq py-pychecker-command "flakes8.py")
     (setq py-pychecker-command-args (quote ("")))
     (defun run-nosetests ()
       "Runs nosetests with the project defined pythonpath"
