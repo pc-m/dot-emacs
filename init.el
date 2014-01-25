@@ -1,5 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/")
-(add-to-list 'load-path "~/.emacs.d/emacs-color-theme-solarized")
+;; (add-to-list 'load-path "~/.emacs.d/emacs-color-theme-solarized")
 (add-to-list 'load-path "/usr/local/share/emacs/site-list")
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 (add-to-list 'load-path "~/.emacs.d/evil")
@@ -48,7 +48,7 @@
 (require 'evil)
 (evil-mode 1)
 
-(require 'color-theme-solarized)
+;; (require 'color-theme-solarized)
 (require 'use-package)
 (require 'flymake-clang-c++)
 (add-hook 'c++-mode-hook 'flymake-clang-c++-load)
@@ -170,7 +170,7 @@
 (use-package color-theme
   :init
   (progn
-    (color-theme-solarized-light)
+;;    (color-theme-solarized-light)
     (set-face-attribute 'default nil :height 100)	;; Set font size
     (column-number-mode t)				;; Show column number
     (setq visible-bell nil)				;; Turn off visual bell
@@ -198,9 +198,9 @@
      (define-coding-system-alias 'utf8 'utf-8)
      (define-coding-system-alias 'UTF-8 'utf-8))))
 
-(set-face-attribute
- 'default nil
- :font (concat "Droid sans mono-" "10"))
+;; (set-face-attribute
+;;  'default nil
+;;  :font (concat "Droid sans mono-" "10"))
 
 ;; Key bindings
 (global-set-key (kbd "C-z") 'undo)
