@@ -46,6 +46,8 @@
 
 ;; Make pages 80 columns width
 (setq-default fill-column 80)
+(color-theme-initialize)
+(color-theme-aalto-light)
 
 ;; Interactive search
 (ido-mode t)
@@ -140,20 +142,16 @@
   (progn
     (setq c-default-style '((c-mode . "linux")))))
 
-(use-package color-theme
-  :init
-  (progn
-    (set-face-attribute 'default nil :height 100)	;; Set font size
-    (column-number-mode t)				;; Show column number
-    (setq visible-bell nil)				;; Turn off visual bell
-    (setq ring-bell-function 'ignore)			;; Turn off audible bell
-    (transient-mark-mode 0)				;; No selection hl
-    (tool-bar-mode 0)					;; No tool bar
-    (menu-bar-mode 0)					;; No menu bar
-    (scroll-bar-mode 0)
-    (show-paren-mode t)				;; Show matching paren
-    (global-hl-line-mode t)				;; Hightlight current line
-))
+(set-face-attribute 'default nil :height 100)  ;; Set font size
+(column-number-mode t)  ;; Show column number
+(setq visible-bell nil)  ;; Turn off visual bell
+(setq ring-bell-function 'ignore)  ;; Turn off audible bell
+(transient-mark-mode 0)  ;; No selection hl
+(tool-bar-mode 0) ;; No tool bar
+(menu-bar-mode 0) ;; No menu bar
+(scroll-bar-mode 0)
+(show-paren-mode t)
+(global-hl-line-mode t)  ;; Hightlight current line
 
 ;; org-mode
 (setq org-todo-keywords
