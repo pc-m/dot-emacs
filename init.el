@@ -1,7 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "/usr/local/share/emacs/site-list")
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
-(add-to-list 'load-path "~/.emacs.d/evil")
 
 
 (setq
@@ -13,28 +12,6 @@
    kept-old-versions 2
    version-control t)       ; use versioned backups
 
-; ---------------------------------------------------
-; evil tweaks
-; ---------------------------------------------------
-
-;;; eval-last-sexp
-(defadvice eval-last-sexp (around evil)
-  "Last sexp ends at point."
-  (when (evil-normal-state-p)
-    (save-excursion
-      (unless (or (eobp) (eolp)) (forward-char))
-      ad-do-it)))
-
-;;; pp-eval-last-sexp
-(defadvice pp-eval-last-sexp (around evil)
-  "Last sexp ends at point."
-  (when (evil-normal-state-p)
-    (save-excursion
-      (unless (or (eobp) (eolp)) (forward-char))
-      ad-do-it)))
-
-; ---------------------------------------------------
-
 ; no splash screen
 (setq inhibit-startup-message t)
 
@@ -44,8 +21,6 @@
 (require 'info+)
 (require 'undo-tree)
 (require 'dirtree)
-(require 'evil)
-(evil-mode 1)
 
 (require 'use-package)
 (require 'flymake-clang-c++)
