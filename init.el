@@ -146,7 +146,6 @@
 (column-number-mode t)  ;; Show column number
 (setq visible-bell nil)  ;; Turn off visual bell
 (setq ring-bell-function 'ignore)  ;; Turn off audible bell
-(transient-mark-mode 0)  ;; No selection hl
 (tool-bar-mode 0) ;; No tool bar
 (menu-bar-mode 0) ;; No menu bar
 (scroll-bar-mode 0)
