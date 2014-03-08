@@ -46,8 +46,6 @@
 
 ;; Make pages 80 columns width
 (setq-default fill-column 80)
-(color-theme-initialize)
-(color-theme-aalto-light)
 
 ;; Interactive search
 (ido-mode t)
