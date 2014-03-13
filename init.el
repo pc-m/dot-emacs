@@ -21,6 +21,7 @@
 (require 'info+)
 (require 'undo-tree)
 (require 'dirtree)
+(require 'virtualenvwrapper)
 
 (require 'use-package)
 (require 'flymake-clang-c++)
