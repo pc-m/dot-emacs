@@ -2,7 +2,6 @@
 (add-to-list 'load-path "/usr/local/share/emacs/site-list")
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 
-
 (setq
    backup-by-copying t      ; don't clobber symlinks
    backup-directory-alist
@@ -22,6 +21,7 @@
 (require 'undo-tree)
 (require 'dirtree)
 (require 'virtualenvwrapper)
+(require 'magit)
 
 (require 'use-package)
 (require 'flymake-clang-c++)
@@ -292,12 +292,6 @@
     (if help (message "%s" help)))))
 
 (add-hook 'post-command-hook 'my-flymake-show-help)
-
-;; Magit
-(use-package magit
-  :commands (magit-status)
-  :load-path "~/.emacs.d/magit/"
-  :init  (global-set-key (kbd "C-x g") 'magit-status))
 
 ;; Lua
 (setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
