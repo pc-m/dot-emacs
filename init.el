@@ -22,6 +22,7 @@
 (require 'dirtree)
 (require 'virtualenvwrapper)
 (require 'magit)
+(require 'nosetests)
 
 (require 'use-package)
 (require 'flymake-clang-c++)
