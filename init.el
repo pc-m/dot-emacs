@@ -2,6 +2,18 @@
 (add-to-list 'load-path "/usr/local/share/emacs/site-list")
 (add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(require 'virtualenvwrapper)
+(venv-initialize-interactive-shells)
+(venv-initialize-eshell)
+(setq venv-location "~/.virtualenvs")
+
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+
 (setq
    backup-by-copying t      ; don't clobber symlinks
    backup-directory-alist
@@ -20,8 +32,6 @@
 (require 'info+)
 (require 'undo-tree)
 (require 'dirtree)
-(require 'virtualenvwrapper)
-(require 'magit)
 (require 'nosetests)
 
 (require 'use-package)
@@ -29,12 +39,12 @@
 (add-hook 'c++-mode-hook 'flymake-clang-c++-load)
 
 ;; Auto complete
-(add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1")
-(require 'auto-complete)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-(require 'auto-complete-config)
-(ac-config-default)
-(global-auto-complete-mode t)
+;; (add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1")
+;; (require 'auto-complete)
+;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+;; (require 'auto-complete-config)
+;; (ac-config-default)
+;; (global-auto-complete-mode t)
 
 (require 'xivo-cpp-style)
 (require 'asterisk-c-style)
@@ -49,9 +59,9 @@
 ;; Make pages 80 columns width
 (setq-default fill-column 80)
 
-;; Interactive search
-(ido-mode t)
-(defalias 'list-buffers 'ibuffer)
+;; ;; Interactive search
+;; (ido-mode t)
+;; (defalias 'list-buffers 'ibuffer)
 
 ;; Use M-<up> and M-<down> to move the current line up or down
 (defun move-text-internal (arg)
@@ -337,14 +347,21 @@
 ;; Runs project init when a file is loaded
 (add-hook 'find-file-hook 'run-project-init)
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ede-project-directories (quote ("/tmp/testpy")))
  '(rst-level-face-base-color ""))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
+
+(add-hook 'after-init-hook 'post-init-stuff)
+(defun post-init-stuff ()
+  ;; Things that require all packages from package to be loaded
+  ;; should happen here.
+  (helm-mode 1))
