@@ -6,6 +6,8 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
+(load-theme 'tango-dark)
+
 (require 'virtualenvwrapper)
 (venv-initialize-interactive-shells)
 (venv-initialize-eshell)
@@ -161,6 +163,7 @@
 (scroll-bar-mode 0)
 (show-paren-mode t)
 (global-hl-line-mode t)  ;; Hightlight current line
+(global-linum-mode t)
 
 ;; org-mode
 (setq org-todo-keywords
