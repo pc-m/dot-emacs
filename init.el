@@ -6,14 +6,18 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
+(ido-mode)
 (load-theme 'tango-dark)
 
-(require 'virtualenvwrapper)
-(venv-initialize-interactive-shells)
-(venv-initialize-eshell)
 (setq venv-location "~/.virtualenvs")
 
-(add-hook 'python-mode-hook 'jedi:setup)
+(defun my-jedi-reset ()
+  (when (fboundp 'jedi:stop-server)
+    (jedi:stop-server))
+  (jedi:setup))
+(add-hook 'python-mode-hook 'my-jedi-reset)
+(add-hook 'venv-postactivate-hook 'my-jedi-reset)
+(add-hook 'venv-postdeactivate-hook 'my-jedi-reset)
 (setq jedi:complete-on-dot t)
 
 (setq
@@ -367,4 +371,7 @@
 (defun post-init-stuff ()
   ;; Things that require all packages from package to be loaded
   ;; should happen here.
-  (helm-mode 1))
+  (venv-initialize-interactive-shells)
+  (venv-initialize-eshell)
+  (ido-vertical-mode)
+)
