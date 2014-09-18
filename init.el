@@ -374,4 +374,5 @@
   (venv-initialize-interactive-shells)
   (venv-initialize-eshell)
   (ido-vertical-mode)
+  (projectile-global-mode)
 )
