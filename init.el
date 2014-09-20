@@ -38,7 +38,6 @@
 (require 'info+)
 (require 'undo-tree)
 (require 'dirtree)
-(require 'nosetests)
 
 (require 'use-package)
 (require 'flymake-clang-c++)
