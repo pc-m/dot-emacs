@@ -5,3 +5,6 @@ srecode-map.el
 auto-save-list/
 elpa/
 ac-comphist.dat
+.python-environments
+projectile-bookmarks.eld
+el-get
