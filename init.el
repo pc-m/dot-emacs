@@ -8,6 +8,7 @@
 
 (ido-mode)
 (load-theme 'tango-dark)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (setq venv-location "~/.virtualenvs")
 
@@ -214,52 +215,12 @@
 	 ("\\.inc$" . php-mode)))
 
 (use-package python
-  :bind ("C-c C-j" . run-nosetests)
   :mode ("\\.py$" . python-mode)
-  :init
-  (progn
-    (message "Initializing python..."))
   :config
   (progn
-    (message "Configuring python...")
     (setq python-python-command "python")
     (setq py-pychecker-command "flakes8.py")
     (setq py-pychecker-command-args (quote ("")))
-    (defun run-nosetests ()
-      "Runs nosetests with the project defined pythonpath"
-      (interactive)
-      (let ((command (concat (get-nosetests-command) " " (get-test-target))))
-	(message command)
-	(compile (concat command))))
-    (defun get-test-target ()
-      "Returns the name of the test module of an empty string"
-      (if (buffer-file-name)
-	  (if (equal "test" (substring (file-name-nondirectory (buffer-file-name)) 0 4))
-	      (buffer-file-name)
-	    "")
-	""))
-    (defun get-nosetests-command ()
-      "Returns [PYTHONPATH=[project-pythonpath][:global-pythonpath]] nosetests"
-      (let ((python-pythonpath (build-pythonpath)))
-	(if (and python-pythonpath (> (length python-pythonpath) 0))
-	    (concat "PYTHONPATH=" python-pythonpath " nosetests")
-	  "nosetests")))
-    (defun get-project-pythonpath ()
-      "Returns a list of paths to include in the pythonpath"
-      (when (and (boundp 'project-pythonpath) (> (length project-pythonpath) 0))
-	project-pythonpath))
-    (defun get-global-pythonpath ()
-      "Returns a list of paths included in the environment variable PYTHONPATH"
-      (let ((path (getenv "PYTHONPATH")))
-	(when (and (boundp 'path) (> (length path) 0)
-		   (split-string path ":")))))
-    (defun build-pythonpath ()
-      "Returns the union of {global,project}-pythonpath as string"
-      (mapconcat 'identity
-		 (delq nil (delete-dups
-			    (append
-			     (get-global-pythonpath)
-			     (get-project-pythonpath)))) ":"))
     (defadvice python-calculate-indentation (around outdent-closing-brackets)
       "Handle lines beginning with a closing bracket and indent them so that
        they line up with the line containing the corresponding opening bracket."
@@ -277,16 +238,6 @@
 		(setq ad-return-value (current-indentation)))
 	    ad-do-it))))
     (ad-activate 'python-calculate-indentation)))
-
-(use-package pymacs
-  :init
-  (progn
-    (message "Initializing pymacs...")
-    (setenv "PYMACS_PYTHON" "python"))
-  :config
-  (progn
-    (message "Configuring pymacs...")
-    (pymacs-load "ropemacs" "rope-")))
 
 ;; Pyflakes for python
 (when (load "flymake" t)
@@ -375,3 +326,5 @@
   (ido-vertical-mode)
   (projectile-global-mode)
 )
+
+(put 'my-project-venv 'safe-local-variable #'stringp)

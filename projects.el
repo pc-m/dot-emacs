@@ -6,7 +6,6 @@
 (defconst xivo-path (getenv "XIVO_PATH"))
 (defconst xivo-agent-root (concat dev-path "/xivo-agent"))
 (defconst xivo-agid-root (concat xivo-path "/xivo-agid"))
-(defconst xivo-ctid-root (concat xivo-path "/xivo-ctid"))
 (defconst xivo-dao-root (concat xivo-path "/xivo-dao"))
 (defconst xivo-client-root (concat dev-path "/xivo-client-qt"))
 (defconst xivo-client-baselib (concat xivo-client-root "/baselib"))
@@ -37,10 +36,6 @@
 (defconst xivo-agent-python-root (concat xivo-agent-root "/xivo-agent"))
 
 ;; PYTHONPATHS
-(defconst xivo-ctid-pythonpath (list xivo-dao-python-root
-                                     xivo-dird-python-root
-                                     xivo-libpython-python-root
-                                     xivo-agent-python-root))
 (defconst xivo-agid-pythonpath (list xivo-dird-python-root
                                      xivo-libpython-root))
 
@@ -52,12 +47,6 @@
   (flymake-clang-c++-load))
 
 ;; Class variables
-(dir-locals-set-class-variables
- 'xivo-ctid-project
- `((nil . ((compile-command . "xm cti.unittest")
-	   (tags-file-name . ,(concat xivo-ctid-root "/TAGS"))))
-   (python-mode . ((project-pythonpath . ,xivo-ctid-pythonpath)))))
-
 (dir-locals-set-class-variables
  'xivo-agid-project
  `((nil . ((compile-command . "xm agi.unittest")
@@ -96,9 +85,6 @@
  xivo-client-root 'xivo-client-qt-project)
 
 (dir-locals-set-directory-class
- xivo-ctid-root 'xivo-ctid-project)
-
-(dir-locals-set-directory-class
  xivo-agid-root 'xivo-agid-project)
 
 (dir-locals-set-directory-class
@@ -114,7 +100,6 @@
 (setq safe-local-variable-values
       `((c-basic-indent . 4)
         (c-basic-indent)
-        (project-pythonpath . ,xivo-ctid-pythonpath)
         (project-pythonpath . ,xivo-agid-pythonpath)
 	(tags-file-name . ,(concat xivo-ctid-root "/TAGS"))
 	(tags-file-name . ,(concat xivo-agid-root "/TAGS"))
