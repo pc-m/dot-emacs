@@ -1,6 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "/usr/local/share/emacs/site-list")
-(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 
 (require 'package)
 (add-to-list 'package-archives
@@ -54,7 +53,6 @@
 
 (require 'xivo-cpp-style)
 (require 'asterisk-c-style)
-(require 'xcscope)
 
 ;; Project specific configuration
 (load "projects.el")
@@ -274,14 +272,6 @@
 ;; C-x C-m and C-c C-m == M-x
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-c\C-m" 'execute-extended-command)
-
-;; Enable snippets
-(require 'yasnippet)
-(yas-global-mode 1)
-
-;; golang
-(add-to-list 'load-path "/usr/local/go/misc/emacs" t)
-(require 'go-mode-load)
 
 (defun get-project-include-path ()
   "Returns a string containing every include paths of a project prefixed with -I"
