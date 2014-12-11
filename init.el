@@ -11,6 +11,8 @@
 
 (setq venv-location "~/.virtualenvs")
 
+(require 'iso-transl)
+
 (defun my-jedi-reset ()
   (when (fboundp 'jedi:stop-server)
     (jedi:stop-server))
@@ -164,7 +166,6 @@
 (menu-bar-mode 0) ;; No menu bar
 (scroll-bar-mode 0)
 (show-paren-mode t)
-(global-hl-line-mode t)  ;; Hightlight current line
 (global-linum-mode t)
 
 ;; org-mode
