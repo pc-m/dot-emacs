@@ -59,15 +59,6 @@
 	   (tags-file-name . ,(concat xivo-dao-root "/TAGS"))))))
 
 (dir-locals-set-class-variables
- 'xivo-client-qt-project
- `((nil . ((fill-column . 80)))
-   (c++-mode . ((c-file-style . "xivo")
-                (project-init . xivo-client-qt-init)))
-   (c-mode . ((mode . c++)
-	      (c-file-style . "xivo")
-              (project-init . xivo-client-qt-init)))))
-
-(dir-locals-set-class-variables
  'xivo-libsccp-project
  `((nil . ((fill-column . 90)
 	   (compile-command . "xm sccp.sync")
@@ -81,9 +72,6 @@
 	   (tags-file-name . ,(concat xivo-webi-root "/TAGS"))))))
 
 ;; Directory to class variable assignment
-(dir-locals-set-directory-class
- xivo-client-root 'xivo-client-qt-project)
-
 (dir-locals-set-directory-class
  xivo-agid-root 'xivo-agid-project)
 
