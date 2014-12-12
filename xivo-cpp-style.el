@@ -8,7 +8,6 @@
 			(substatement-open . 0)
 			(substatement-label . 0)
 			(access-label . 0)
-			(topmost-intro . +)
 			(label . 0)
 			(statement-cont . +)
 			(case-label . 0))))
