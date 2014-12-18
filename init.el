@@ -1,5 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "/usr/local/share/emacs/site-list")
+(setq enable-local-eval t)  ;; Allow eval in dir-locals.el
 
 (require 'package)
 (add-to-list 'package-archives
@@ -276,8 +277,8 @@
 
 (defun get-project-include-path ()
   "Returns a string containing every include paths of a project prefixed with -I"
-  (if (boundp 'project-include-path)
-    (add-list-prefix "-I" project-include-path)
+  (if (boundp 'pcm:project-include-path)
+    (add-list-prefix "-I" pcm:project-include-path)
     (list "")))
 
 (defun add-list-prefix (prefix l)
@@ -306,3 +307,4 @@
 )
 
 (put 'my-project-venv 'safe-local-variable #'stringp)
+(put 'pcm:project-include-path 'safe-local-variable #'listp)
