@@ -294,19 +294,6 @@
 
 ;; Runs project init when a file is loaded
 (add-hook 'find-file-hook 'run-project-init)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ede-project-directories (quote ("/tmp/testpy")))
- '(rst-level-face-base-color ""))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 (add-hook 'after-init-hook 'post-init-stuff)
 (defun post-init-stuff ()
