@@ -8,7 +8,6 @@
 (defconst xivo-agid-root (concat xivo-path "/xivo-agid"))
 (defconst xivo-dao-root (concat xivo-path "/xivo-dao"))
 (defconst xivo-client-root (concat xivo-path "/xivo-client-qt"))
-(defconst xivo-client-baselib (concat xivo-client-root "/baselib"))
 (defconst xivo-client-xivoclient (concat xivo-client-root "/xivoclient"))
 (defconst xivo-dird-root (concat dev-path "/xivo-dird"))
 (defconst xivo-libpython-root (concat dev-path "/xivo-lib-python"))

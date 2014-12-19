@@ -4,10 +4,10 @@
                                                       "/usr/include/x86_64-linux-gnu/qt5/QtNetwork"
                                                       "/usr/include/x86_64-linux-gnu/qt5/QtGui"
                                                       "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"
-                                                      xivo-client-baselib
+                                                      (concat (projectile-project-root) "/baselib")
+                                                      (concat (projectile-project-root) "/baselib/src")
+                                                      (concat (projectile-project-root) "/baselib/src/storage")
                                                       xivo-client-xivoclient
-                                                      (concat xivo-client-baselib "/src")
-                                                      (concat xivo-client-baselib "/src/storage")
                                                       (concat xivo-client-xivoclient "/src")
                                                       (concat xivo-client-xivoclient "/src/xletlib")
                                                       (concat xivo-client-xivoclient "/obj"))))
