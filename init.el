@@ -293,13 +293,13 @@
       (setq result (cons (concat prefix item) result)))
     result))
 
-(defun run-project-init ()
+(defun pcm:run-project-init ()
   "Run project-init if it exists"
-  (when (boundp 'project-init)
-    (funcall project-init)))
+  (when (boundp 'pcm:project-init)
+    (funcall pcm:project-init)))
 
 ;; Runs project init when a file is loaded
-(add-hook 'find-file-hook 'run-project-init)
+(add-hook 'find-file-hook 'pcm:run-project-init)
 
 (add-hook 'after-init-hook 'post-init-stuff)
 (defun post-init-stuff ()
@@ -313,3 +313,4 @@
 
 (put 'my-project-venv 'safe-local-variable #'stringp)
 (put 'pcm:project-include-path 'safe-local-variable #'listp)
+(put 'pcm:project-init 'safe-local-variable #'functionp)

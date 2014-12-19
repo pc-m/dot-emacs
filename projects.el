@@ -75,5 +75,4 @@
         (c-basic-indent)
         (project-pythonpath . ,xivo-agid-pythonpath)
 	(tags-file-name . #'stringp)
-	(cscope-initial-directory . ,xivo-libsccp-root)
-        (project-init . xivo-client-qt-init)))
+	(cscope-initial-directory . ,xivo-libsccp-root)))
