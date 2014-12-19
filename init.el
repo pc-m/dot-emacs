@@ -2,6 +2,8 @@
 (add-to-list 'load-path "/usr/local/share/emacs/site-list")
 (setq enable-local-eval t)  ;; Allow eval in dir-locals.el
 
+;(setq flymake-log-level 3) ;; enable flymake logging
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -44,7 +46,10 @@
 
 (require 'use-package)
 (require 'flymake-clang-c++)
-(add-hook 'c++-mode-hook 'flymake-clang-c++-load)
+(defun pcm:post-dir-locals-mode-hook ()
+  (when (derived-mode-p 'c++mode)
+    (flymake-clang-c++-load)))
+(add-hook 'hack-local-variable-hook #'pcm:post-dir-locals-mode-hook)
 
 ;; Auto complete
 ;; (add-to-list 'load-path "~/.emacs.d/auto-complete-1.3.1")
