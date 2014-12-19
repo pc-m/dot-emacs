@@ -25,12 +25,6 @@
 (defconst xivo-agid-pythonpath (list xivo-dird-python-root
                                      xivo-libpython-root))
 
-(defun xivo-client-qt-init ()
-  "Runs some commands to get the XiVO client project properly setup"
-  (message "XiVO client Qt init")
-  (flymake-clang-c++-init)
-  (flymake-clang-c++-load))
-
 ;; Class variables
 (dir-locals-set-class-variables
  'xivo-agid-project
