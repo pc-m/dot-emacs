@@ -267,8 +267,10 @@
 (add-hook 'post-command-hook 'my-flymake-show-help)
 
 ;; Lua
-(setq auto-mode-alist (cons '("\.lua$" . lua-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.lua$" . lua-mode) auto-mode-alist))
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+
+(setq auto-mode-alist (cons '("\\.qml$" . javascript-mode) auto-mode-alist))
 
 ;; Enable narrowing of region
 (put 'narrow-to-region 'disabled nil)
