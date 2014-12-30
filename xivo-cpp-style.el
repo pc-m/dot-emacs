@@ -10,6 +10,7 @@
 			(access-label . 0)
 			(label . 0)
 			(statement-cont . +)
+			(topmost-intro . +)
 			(case-label . 0))))
   "XiVO client C++ Programming Style")
 
