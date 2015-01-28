@@ -110,10 +110,9 @@
 
 (global-set-key [\M-up] 'move-text-up)
 (global-set-key [\M-down] 'move-text-down)
-
-;; Use Ctrl-F11 to recompile
 (global-set-key [\C-f11] 'recompile)
 (global-set-key (kbd "C-x o") 'ace-window)
+(global-set-key (kbd "C-c h") 'helm-projectile)
 
 (defun duplicate-line (arg)
   "Duplicate current line, leaving point in lower line."
