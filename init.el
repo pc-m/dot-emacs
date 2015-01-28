@@ -64,6 +64,7 @@
 
 ;; Project specific configuration
 (load "projects.el")
+(setq projectile-completion-system 'grizzl)
 
 ;; Start in server mode
 (server-start)
