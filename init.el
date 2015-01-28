@@ -112,6 +112,7 @@
 
 ;; Use Ctrl-F11 to recompile
 (global-set-key [\C-f11] 'recompile)
+(global-set-key (kbd "C-x o") 'ace-window)
 
 (defun duplicate-line (arg)
   "Duplicate current line, leaving point in lower line."
