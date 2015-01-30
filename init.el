@@ -72,10 +72,6 @@
 ;; Make pages 80 columns width
 (setq-default fill-column 80)
 
-;; ;; Interactive search
-;; (ido-mode t)
-;; (defalias 'list-buffers 'ibuffer)
-
 ;; Use M-<up> and M-<down> to move the current line up or down
 (defun move-text-internal (arg)
    (cond
