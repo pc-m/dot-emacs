@@ -186,13 +186,6 @@
      (define-coding-system-alias 'utf8 'utf-8)
      (define-coding-system-alias 'UTF-8 'utf-8))))
 
-;; (set-face-attribute
-;;  'default nil
-;;  :font (concat "Droid sans mono-" "10"))
-
-;; Key bindings
-(global-set-key (kbd "C-z") 'undo)
-
 (use-package whitespace
   :commands whitespace-mode
   :init
