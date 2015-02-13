@@ -25,6 +25,8 @@
 (add-hook 'venv-postdeactivate-hook 'my-jedi-reset)
 (setq jedi:complete-on-dot t)
 
+(add-hook 'yaml-mode-hook 'flymake-yaml-load)
+
 (setq
    backup-by-copying t      ; don't clobber symlinks
    backup-directory-alist
