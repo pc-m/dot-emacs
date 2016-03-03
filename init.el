@@ -4,6 +4,7 @@
 
 ;(setq flymake-log-level 3) ;; enable flymake logging
 
+(load "erc.conf.el")
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
