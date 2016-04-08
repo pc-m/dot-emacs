@@ -1,4 +1,5 @@
 ;; ERC configuration for IRC
+(require 'erc)
 
 ;; ERC modules to load
 (add-to-list 'erc-modules 'notifications)
