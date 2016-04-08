@@ -211,6 +211,7 @@
 (use-package php-mode
   :mode (("\\.php$" . php-mode)
 	 ("\\.inc$" . php-mode)))
+(add-hook 'php-mode-hook 'flymake-php-load)
 
 (use-package python
   :mode ("\\.py$" . python-mode)
