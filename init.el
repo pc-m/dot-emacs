@@ -9,6 +9,9 @@
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
+; Do not ask to reload a tags file
+(setq tags-revert-without-query t)
+
 (ido-mode)
 (load-theme 'tango-dark)
 (defalias 'yes-or-no-p 'y-or-n-p)
