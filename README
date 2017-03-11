@@ -1,4 +1,6 @@
-My Emacs configuration files
+# My Emacs configuration files
+
+I am now using spacemacs. I'll be keeping this repository around for a while but I will not be updating it anymore.
 
 Dependencies:
 color-theme - apt-get install emacs-goodies-extra-el
